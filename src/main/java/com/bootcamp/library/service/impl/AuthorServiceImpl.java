@@ -45,4 +45,13 @@ public class AuthorServiceImpl implements AuthorService {
 		return authorDto;
 	}
 
+	@Override
+	public List<Author> getAllAuthors2() {
+		List<Author> authorList = new ArrayList<Author>();
+		authorRepository.findAll().forEach(author -> {
+			authorList.add(author);
+		});
+		return authorList;
+	}
+
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bootcamp.library.model.dto.AuthorDto;
 import com.bootcamp.library.model.dto.BookDto;
+import com.bootcamp.library.model.entity.Author;
+import com.bootcamp.library.model.entity.Book;
 import com.bootcamp.library.service.AuthorService;
 import com.bootcamp.library.service.BookService;
 
@@ -37,6 +39,16 @@ public class LibraryController {
 	@RequestMapping(value = "/author/all", method = RequestMethod.GET)
 	public List<AuthorDto> getAllAuthors() {
 		return authorService.getAllAuthors();
+	}
+	
+	@RequestMapping(value = "/author/all/2", method = RequestMethod.GET)
+	public List<Author> getAllAuthors2() {
+		return authorService.getAllAuthors2();
+	}
+	
+	@RequestMapping(value = "/book/all/2", method = RequestMethod.GET)
+	public List<Book> getAllBooks2() {
+		return bookService.getAllBooks2();
 	}
 
 }

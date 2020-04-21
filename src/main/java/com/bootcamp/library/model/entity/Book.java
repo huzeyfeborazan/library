@@ -1,25 +1,27 @@
 package com.bootcamp.library.model.entity;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Book {
 	
+	private static final String Fe = null;
+
 	@Id
 	@GeneratedValue
 	private Integer id;
 	
-	@ManyToOne(cascade = {CascadeType.ALL})
+	@ManyToMany
 	@JoinColumn(name="author_id")
-	private Author author;
+	private List<Author> authors;
 
 	@Column
 	private String barcode;
@@ -46,13 +48,13 @@ public class Book {
 		this.id = id;
 	}
 
-	public Author getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
+//	public Author getAuthor() {
+//		return author;
+//	}
+//
+//	public void setAuthor(Author author) {
+//		this.author = author;
+//	}
 
 	public String getBarcode() {
 		return barcode;
@@ -68,6 +70,14 @@ public class Book {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public List<Author> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(List<Author> authors) {
+		this.authors = authors;
 	}
 	
 }

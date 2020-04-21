@@ -1,5 +1,8 @@
 package com.bootcamp.library.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +28,17 @@ public class BookServiceImpl implements BookService {
 		author.setName(bookDto.getAuthorDto().getName());
 		author.setLanguage(bookDto.getAuthorDto().getLanguage());
 		author.setCountry(bookDto.getAuthorDto().getCountry());
-		book.setAuthor(author);
 		
 		bookRepository.save(book);
+	}
+
+	@Override
+	public List<Book> getAllBooks2() {
+		List<Book> bookList = new ArrayList<Book>();
+		bookRepository.findAll().forEach(book -> {
+			bookList.add(book);
+		});
+		return bookList;
 	}
 
 }

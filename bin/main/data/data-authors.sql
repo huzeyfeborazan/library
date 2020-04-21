@@ -1,0 +1,32 @@
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('1','Hasan Ali Toptas','Turkey','Turkish');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('2','Peyami Safa','Turkey','Turkish');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('3','Ihsan Oktay Anar','Turkey','Turkish');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('4','Orhan Pamuk','Turkey','Turkish');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('5','Kemal Tahir','Turkey','Turkish');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('6','Yasar Kemal','Turkey','Turkish');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('7','John Fowles','England','English');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('8','Virginia Woolf','England','English');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('9','Jane Austen','England','English');
+INSERT INTO "author" ("id", "name", "country", "language") VALUES ('10','Jack London','USA','English');
+
+INSERT INTO "book" ("id", "title") VALUES ('1', 'Heba123');
+INSERT INTO "book" ("id", "title") VALUES ('2', 'Golgesizler');
+INSERT INTO "book" ("id", "title") VALUES ('3', 'Puslu Kitalar Atlasi');
+INSERT INTO "book" ("id", "title") VALUES ('4', 'Dokuzuncu Hariciye Kogusu');
+INSERT INTO "book" ("id", "title") VALUES ('5', 'Yeni Hayat');
+INSERT INTO "book" ("id", "title") VALUES ('6', 'Ince Mehmet');
+INSERT INTO "book" ("id", "title") VALUES ('7', 'Koleksiyoncu');
+INSERT INTO "book" ("id", "title") VALUES ('8', 'Dalgalar');
+INSERT INTO "book" ("id", "title") VALUES ('9', 'Martin Eden');
+INSERT INTO "book" ("id", "title") VALUES ('10', 'Gurur ve Onyargi');
+
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('1', '2');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('2', '2');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('3', '3');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('4', '3');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('5', '1');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('4', '3');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('7', '4');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('1', '5');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('3', '2');
+INSERT INTO "book_authors" ("books_id", "authors_id") VALUES ('2', '4');
