@@ -1,44 +1,32 @@
 package com.bootcamp.library.model.entity;
 
-import java.util.Date;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Book {
-	
-	private static final String Fe = null;
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public abstract class Book {
 
 	@Id
 	@GeneratedValue
 	private Integer id;
 	
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name="author_id")
-	private List<Author> authors;
-
-	@Column
-	private String barcode;
+	private Author author;
 
 	@Column
 	private String title;
 	
-	public Date getReleaseDate() {
-		return releaseDate;
-	}
-
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-
 	@Column
-	private Date releaseDate;
+	private Integer pageCount;
+	
 
 	public Integer getId() {
 		return id;
@@ -48,20 +36,12 @@ public class Book {
 		this.id = id;
 	}
 
-//	public Author getAuthor() {
-//		return author;
-//	}
-//
-//	public void setAuthor(Author author) {
-//		this.author = author;
-//	}
-
-	public String getBarcode() {
-		return barcode;
+	public Author getAuthor() {
+		return author;
 	}
 
-	public void setBarcode(String barcode) {
-		this.barcode = barcode;
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 
 	public String getTitle() {
@@ -72,12 +52,12 @@ public class Book {
 		this.title = title;
 	}
 
-	public List<Author> getAuthors() {
-		return authors;
+	public Integer getPageCount() {
+		return pageCount;
 	}
 
-	public void setAuthors(List<Author> authors) {
-		this.authors = authors;
+	public void setPageCount(Integer pageCount) {
+		this.pageCount = pageCount;
 	}
 	
 }

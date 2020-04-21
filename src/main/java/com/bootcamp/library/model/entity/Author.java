@@ -1,17 +1,9 @@
 package com.bootcamp.library.model.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Author {
@@ -28,22 +20,6 @@ public class Author {
 	
 	@Column
 	private String language;
-	
-	@Column
-	@ManyToMany(
-			cascade = CascadeType.ALL,
-			mappedBy="authors",
-			fetch = FetchType.LAZY)
-	@JsonIgnore
-	private List<Book> books  = new ArrayList<>();
-
-	public List<Book> getBooks() {
-		return books;
-	}
-
-	public void setBooks(List<Book> books) {
-		this.books = books;
-	}
 
 	public Integer getId() {
 		return id;
