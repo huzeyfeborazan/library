@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.bootcamp.library.model.dto.AuthorDto;
@@ -47,11 +48,12 @@ public class AuthorServiceImpl implements AuthorService {
 
 	@Override
 	public List<Author> getAllAuthors2() {
-		List<Author> authorList = new ArrayList<Author>();
-		authorRepository.findAll().forEach(author -> {
-			authorList.add(author);
-		});
-		return authorList;
+//		List<Author> authorList = new ArrayList<Author>();
+//		authorRepository.findAll().forEach(author -> {
+//			authorList.add(author);
+//		});
+		Sort sortByName = Sort.by("name");
+		return authorRepository.findAllAuthorsNamedParameter(false, "England");
 	}
 
 }

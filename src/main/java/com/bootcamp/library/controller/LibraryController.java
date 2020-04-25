@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bootcamp.library.model.dto.AuthorDto;
@@ -46,9 +47,9 @@ public class LibraryController {
 		return authorService.getAllAuthors2();
 	}
 	
-	@RequestMapping(value = "/book/all/2", method = RequestMethod.GET)
-	public List<Book> getAllBooks2() {
-		return bookService.getAllBooks2();
+	@RequestMapping(value = "/book/all", method = RequestMethod.GET)
+	public List<Book> getAllBooks2(@RequestParam Integer page, @RequestParam Integer count) {
+		return bookService.getAllBooks2(page, count);
 	}
 
 }

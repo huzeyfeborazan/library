@@ -12,8 +12,6 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Book {
-	
-	private static final String Fe = null;
 
 	@Id
 	@GeneratedValue
@@ -29,6 +27,9 @@ public class Book {
 	@Column
 	private String title;
 	
+	@Column(name="publish_date", nullable = true)
+	private Date releaseDate;
+	
 	public Date getReleaseDate() {
 		return releaseDate;
 	}
@@ -37,8 +38,6 @@ public class Book {
 		this.releaseDate = releaseDate;
 	}
 
-	@Column
-	private Date releaseDate;
 
 	public Integer getId() {
 		return id;

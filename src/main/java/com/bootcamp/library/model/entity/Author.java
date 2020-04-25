@@ -23,11 +23,14 @@ public class Author {
 	@Column
 	private String name;
 	
-	@Column
+	@Column(length=50, unique = true, nullable = false)
 	private String country;
 	
 	@Column
 	private String language;
+	
+	@Column
+	private Boolean alive;
 	
 	@Column
 	@ManyToMany(
@@ -75,6 +78,14 @@ public class Author {
 
 	public void setLanguage(String language) {
 		this.language = language;
+	}
+
+	public Boolean getAlive() {
+		return alive;
+	}
+
+	public void setAlive(Boolean alive) {
+		this.alive = alive;
 	}
 
 }

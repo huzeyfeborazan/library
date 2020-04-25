@@ -9,6 +9,6 @@ public interface BookService {
 	
 	public void addBook(BookDto bookDto);
 	
-	public List<Book> getAllBooks2();
+	public List<Book> getAllBooks2(Integer page, Integer count);
 
 }
